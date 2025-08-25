@@ -13,7 +13,7 @@ class Solution:
 
             if (row + col) % 2 == 0:
 
-                if col == m - 1:
+                if col == m - 1: # some times row = 0 but col is m-1 so these condition is first
 
                     row = row + 1
 
