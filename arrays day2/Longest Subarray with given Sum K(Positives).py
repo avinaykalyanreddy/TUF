@@ -21,6 +21,7 @@ for i in range(len(nums)):
 print(res)
 
 """
+# this code only works when array contains positive and zeros only
 
 n = len(nums)
 
