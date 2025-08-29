@@ -1,7 +1,7 @@
 nums = [[3,6],[1,5],[4,7]]
 
 
-prefix = [0]*102
+prefix = [0]*102 # swipe line
 
 for s,e in nums:
 
