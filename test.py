@@ -1,33 +1,28 @@
-blocks = "WBWBBBW"; k = 2
-"""
-You are given a 0-indexed string blocks of length n, where blocks[i] is either 'W' or 'B', representing the color of the ith block. The characters 'W' and 'B' denote the colors white and black, respectively.
+nums = [0,0,1,1,0,0,1,1,1,0,1,1,0,0,0,1,1,1,1]; k = 3
 
-You are also given an integer k, which is the desired number of consecutive black blocks.
 
-In one operation, you can recolor a white block such that it becomes a black block.
 
-Return the minimum number of operations needed such that there is at least one occurrence of k consecutive black blocks.
-"""
-
-res = k
-cnt = 0
+res = 0
 
 left = 0
 
-for right in range(len(blocks)):
 
-    if blocks[right] == "W":
+cnt_zero = 0
 
-        cnt += 1
+for right in range(len(nums)):
 
-    if right - left + 1 == k:
+    if nums[right] == 0:
 
-        res = min(res,cnt)
+        cnt_zero += 1
 
-        if blocks[left] == "W":
+    while cnt_zero > k:
 
-            cnt -= 1
+        if nums[left] == 0:
+
+            cnt_zero -= 1
 
         left += 1
+
+    res = max(res,right-left+1)
 
 print(res)
