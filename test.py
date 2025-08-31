@@ -1,36 +1,18 @@
-cardPoints = [96,90,41,82,39,74,64,50,30]; k = 8
+nums = [2,10,7,5,4,1,8,6]
 
 
+min_idx = nums.index(min(nums))
 
-n = len(cardPoints)
+max_idx = nums.index(max(nums))
 
-total = sum(cardPoints)
+n = len(nums)
 
-res = 0
+left = max(min_idx,max_idx)+1
 
-sliding_window = n - k
-
-partial_sum = 0
-
-left = 0
-
-for right in range(n):
-
-    if right - left == sliding_window:
-        res = max(res, total - partial_sum)
-        partial_sum = partial_sum - cardPoints[left]
-
-        left += 1
+right = max(n-min_idx,n-max_idx)
 
 
-
-    partial_sum += cardPoints[right]
-
-
-if right - left + 1 == sliding_window:
-    res = max(res, total - partial_sum)
+both = min(min_idx,max_idx)+1 + min(n-min_idx,n-max_idx)
 
 
-
-print(res)
-
+print(min(left,right,both))
