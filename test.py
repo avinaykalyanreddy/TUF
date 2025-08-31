@@ -1,69 +1,22 @@
-
-
-
-nums = [1,2,3,1,2,3]; k = 2
-
-
-
-
-
-
+prices = [7,1,5,3,6,4]
 
 """
-dic = {}
-for idx,val in enumerate(nums):
-
-    if val in dic:
-
-        if abs(dic[val] - idx ) <= k:
-
-            print(True)
-            exit()
-
-    dic[val] = idx
-
-
-print(False)"""
-
-
-
-
-
-""""
-arr = sorted([(idx,val) for idx,val in enumerate(nums)],key=lambda a:a[1])
-print(arr)
-for i in range(len(arr)-1):
-
-    if arr[i][1] == arr[i+1][1] and abs(arr[i][0] - arr[i+1][0]) <= k:
-
-        print(True)
-
-
-print(False)
-
+stock market strategy buy low sell high
 """
 
-window = set()
+min_val = float("inf")
 
-left = 0
+res = 0
 
-for right in range(len(nums)):
+for i in prices:
 
-    if right - left > k : # window size should be k+1
-
-        window.remove(nums[left])
-
-        left += 1
+    if i < min_val:
 
 
-    if nums[right] in window:
+        min_val = i
 
-        print(True)
+    else:
 
+        res = max(res,i - min_val)
 
-    window.add(nums[right])
-
-print(False)
-
-# space complexity O(k)
-# time complexity O(n)
+print(res)
