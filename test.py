@@ -1,29 +1,33 @@
-arr = [11,13,17,23,29,31,7,5,2,3]; k = 3; threshold = 5
+customers = [1,2,3];
+grumpy = [1,1,0];
+minutes = 1
 
+n = len(customers)
 
-res = 0
-
-partial_sum = 0
-
-n = len(arr)
 
 left = 0
 
+satisfied = 0
+
+window = max_window = 0
+
 for right in range(n):
 
-    partial_sum += arr[right]
+    if grumpy[right] :
 
-    if right - left + 1 == k:
+        window += customers[right]
 
-        if partial_sum/k >= threshold:
+    else:
 
-            res += 1
+        satisfied += customers[right]
 
-        partial_sum -= arr[left]
+    max_window = max(max_window, window)
+    if right - left  ==  minutes:
+
+        if grumpy[left]:
+
+            window -= customers[left]
+
         left += 1
 
-
-print(res)
-
-
-
+print(satisfied,window)
