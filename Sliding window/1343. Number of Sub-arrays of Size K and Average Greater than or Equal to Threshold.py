@@ -1,5 +1,8 @@
-arr = [11,13,17,23,29,31,7,5,2,3]; k = 3; threshold = 5
+"""
+Given an array of integers arr and two integers k and threshold, return the number of sub-arrays of size k and average greater than or equal to threshold.
+"""
 
+arr = [2,2,2,2,5,5,5,8]; k = 3; threshold = 4
 
 res = 0
 
@@ -24,6 +27,4 @@ for right in range(n):
 
 
 print(res)
-
-
 
