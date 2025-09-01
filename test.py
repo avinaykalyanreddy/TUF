@@ -1,33 +1,23 @@
-customers = [1,2,3];
-grumpy = [1,1,0];
-minutes = 1
-
-n = len(customers)
+colors = [0,1,0,1,0]; k = 3
 
 
+res = 0
 left = 0
+n = len(colors)
 
-satisfied = 0
 
-window = max_window = 0
+for right in range(1,n+k-1):
 
-for right in range(n):
+    if colors[(right)%n] == colors[(right - 1)%n]:
 
-    if grumpy[right] :
+        left = right
 
-        window += customers[right]
+    if right - left + 1 > k:
 
-    else:
+        left = left + 1
 
-        satisfied += customers[right]
+    if right - left + 1 == k:
 
-    max_window = max(max_window, window)
-    if right - left  ==  minutes:
+        res += 1
 
-        if grumpy[left]:
-
-            window -= customers[left]
-
-        left += 1
-
-print(satisfied,window)
+print(res)
