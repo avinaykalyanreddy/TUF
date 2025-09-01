@@ -1,23 +1,19 @@
-colors = [0,1,0,1,0]; k = 3
-
+s = "pwwkew"
 
 res = 0
+
+unique = set()
+
 left = 0
-n = len(colors)
+for right,val in enumerate(s):
 
+    while val in unique:
 
-for right in range(1,n+k-1):
+        unique.remove(s[left])
+        left += 1
 
-    if colors[(right)%n] == colors[(right - 1)%n]:
+    unique.add(val)
 
-        left = right
-
-    if right - left + 1 > k:
-
-        left = left + 1
-
-    if right - left + 1 == k:
-
-        res += 1
+    res = max(res,right - left + 1)
 
 print(res)

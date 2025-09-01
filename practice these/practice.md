@@ -7,7 +7,8 @@
 1984. Minimum Difference Between Highest and Lowest of K Scores, Tip sort the array 
 
 3208. Alternating Groups II # dont think to  complex use pen and paper
-  
+
+3. Longest Substring Without Repeating Characters
 
 
 
