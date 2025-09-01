@@ -1,18 +1,18 @@
-nums = [2,10,7,5,4,1,8,6]
+nums = [87063,61094,44530,21297,95857,93551,9918]; k = 6
 
 
-min_idx = nums.index(min(nums))
+nums.sort()
 
-max_idx = nums.index(max(nums))
-
+res  = float("inf")
 n = len(nums)
+left = 0
 
-left = max(min_idx,max_idx)+1
+for right in range(n):
 
-right = max(n-min_idx,n-max_idx)
+    if right - left + 1 == k:
 
+        res = min(res,nums[right] - nums[left])
 
-both = min(min_idx,max_idx)+1 + min(n-min_idx,n-max_idx)
+        left = left + 1
 
-
-print(min(left,right,both))
+print(res)
