@@ -12,6 +12,8 @@
 
 424. Longest Repeating Character Replacement
 
+1838. Frequency of the Most Frequent Element
+
 
 
 
