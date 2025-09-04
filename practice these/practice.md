@@ -14,6 +14,8 @@
 
 1838. Frequency of the Most Frequent Element
 
+1658. minimum operations to reduce x to zero tip u have to remove only first or last
+
 
 
 
