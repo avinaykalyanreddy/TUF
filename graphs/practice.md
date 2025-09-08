@@ -3,3 +3,5 @@
 997. Find the Town Judge
 
 733. Flood Fill
+
+1267. Count Servers that Communicate
