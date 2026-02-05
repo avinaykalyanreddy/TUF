@@ -15,26 +15,25 @@ Note: Since nums is circular, moving past the last element wraps around to the b
 nums = [3,-2,1,1]
 
 n = len(nums)
-new_arr = nums*3
 res = []
+for i in range(n):
 
-for i in range(n,n*2):
+    val = nums[i]
 
-    if new_arr[i] == 0:
-
-        res.append(0)
+    if val == 0:
+        res.append(val)
 
     else:
 
-        idx = abs(new_arr[i]) % (n)
+        idx = abs(val) % n
 
-        if new_arr[i] < 0:
+        if val < 0 :
 
-            res.append(new_arr[i-idx])
+            res.append(nums[(i-idx) % n])
 
         else:
 
-            res.append(new_arr[idx+i])
+            res.append(nums[(i+idx) % n ] )
+
 
 print(res)
-
