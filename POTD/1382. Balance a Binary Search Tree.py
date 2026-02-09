@@ -5,7 +5,7 @@ A binary search tree is balanced if the depth of the two subtrees of every node 
 
 """
 class Solution:
-    def balanceBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+    def balanceBST(self, root) :
         sorted_arr = []
 
         def inorder(root):
